@@ -23,7 +23,7 @@ antigen use oh-my-zsh
 antigen bundle lukechilds/zsh-nvm
 antigen bundle git
 antigen bundle command-not-found
-antigen bundle zsh-users/zsh-syntax-highlighting //Conflicting with fig.io(?)
+# antigen bundle zsh-users/zsh-syntax-highlighting //might be conflicting with fig.io(?)
 
 
 #Font used for terminal

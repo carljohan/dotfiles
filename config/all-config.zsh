@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# Fig pre block. Keep at the top of this file.
+. "$HOME/.fig/shell/zshrc.pre.zsh"
+
+
 #Activate antigen
 source /usr/local/share/antigen/antigen.zsh
 
@@ -19,14 +23,15 @@ antigen use oh-my-zsh
 antigen bundle lukechilds/zsh-nvm
 antigen bundle git
 antigen bundle command-not-found
-antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-syntax-highlighting //Conflicting with fig.io(?)
 
 
 #Font used for terminal
 #MesloLGS NF
 
 # Antigen theme
-antigen theme robbyrussell
+antigen theme spaceship-prompt/spaceship-prompt
+# antigen theme robbyrussell
 
 # Tell Antigen that you're done.
 antigen apply
@@ -40,6 +45,12 @@ antigen apply
 # Example aliases
 alias zconf="code ~/.dotfiles/config/"
 
+# for Brew
+export PATH="/usr/local/sbin:$PATH"
 
-
+# for gnupg
 export GPG_TTY=$(tty)
+
+
+# Fig post block. Keep at the bottom of this file.
+. "$HOME/.fig/shell/zshrc.post.zsh"

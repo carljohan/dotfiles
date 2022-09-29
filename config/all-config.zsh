@@ -44,6 +44,8 @@ antigen apply
 #
 # Example aliases
 alias zconf="code ~/.dotfiles/config/"
+#open current dir in vscode
+alias c="code ."
 
 # for Brew
 export PATH="/usr/local/sbin:$PATH"

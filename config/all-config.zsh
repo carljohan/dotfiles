@@ -47,6 +47,13 @@ alias zconf="code ~/.dotfiles/config/"
 #open current dir in vscode
 alias c="code ."
 
+# Fixing macOS zsh Terminal History Settings - https://blog.akatz.org/fixing-macos-zsh-terminal-history-settings/
+alias history="history 1"
+HISTSIZE=99999  
+HISTFILESIZE=99999 
+SAVEHIST=$HISTSIZE
+setopt SHARE_HISTORY HIST_IGNORE_DUPS
+
 # for Brew
 export PATH="/usr/local/sbin:$PATH"
 

@@ -1,7 +1,11 @@
 # dotfiles
 
-Symlink `.zshrc` to root
 
+
+# Install
+
+1. clone this git repo into root dir
+2. run 
 ```
- ln -s ~/.dotfiles/config/.zshrc ~/.zshrc
+source .dotfiles/install.sh
 ```

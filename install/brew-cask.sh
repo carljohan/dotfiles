@@ -7,6 +7,8 @@ apps=(
     visual-studio-code
     vlc
     raycast
+    fig
+    cron
 )
 
 brew install "${apps[@]}" --cask

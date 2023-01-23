@@ -13,9 +13,9 @@ DOTFILES_DIR="~/.dotfiles"
 
 # # symlinks
 # ln -s "$DOTFILES_DIR/.bash_profile" ~
-ln -s "$DOTFILES_DIR/git/.gitconfig" ~
-ln -s "$DOTFILES_DIR/git/.gitignore_global" ~
-ln -s "$DOTFILES_DIR/config/.zshrc" ~
+ln -s ~/.dotfiles/git/.gitconfig .gitconfig
+ln -s ~/.dotfiles/git/.gitignore_global .gitignore_global
+ln -s ~/.dotfiles/config/.zshrc ~/.zshrc
 
 
 

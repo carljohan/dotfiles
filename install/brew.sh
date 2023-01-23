@@ -14,6 +14,7 @@ apps=(
     antigen
     volta
     dnsmasq
+    pyenv
 )
 
 brew install "${apps[@]}"

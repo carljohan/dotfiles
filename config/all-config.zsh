@@ -9,7 +9,7 @@ integer t0=$(date '+%s')
 
 
 #Activate antigen
-source /usr/local/share/antigen/antigen.zsh
+source $(brew --prefix)/share/antigen/antigen.zsh
 
 export WAKATIME_HOME=$HOME/.wakatime_config
 # ssh

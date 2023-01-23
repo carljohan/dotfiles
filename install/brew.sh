@@ -15,6 +15,7 @@ apps=(
     volta
     dnsmasq
     pyenv
+    gh
 )
 
 brew install "${apps[@]}"

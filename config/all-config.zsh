@@ -17,14 +17,20 @@ export WAKATIME_HOME=$HOME/.wakatime_config
 
 
 # antigen files 
-export NVM_COMPLETION=true  # https://github.com/lukechilds/zsh-nvm#nvm-completion=
-export NVM_LAZY_LOAD=true # https://github.com/lukechilds/zsh-nvm#lazy-loading=
-export NVM_AUTO_USE=true # https://github.com/lukechilds/zsh-nvm#auto-use=
+# export NVM_COMPLETION=true  # https://github.com/lukechilds/zsh-nvm#nvm-completion=
+# export NVM_LAZY_LOAD=true # https://github.com/lukechilds/zsh-nvm#lazy-loading=
+# export NVM_AUTO_USE=true # https://github.com/lukechilds/zsh-nvm#auto-use=
+
+
+# VOLTA
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+# VOLTA end
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
-antigen bundle lukechilds/zsh-nvm
+# antigen bundle lukechilds/zsh-nvm
 antigen bundle git
 antigen bundle command-not-found
 # antigen bundle zsh-users/zsh-syntax-highlighting //might be conflicting with fig.io(?)

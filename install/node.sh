@@ -11,7 +11,6 @@ volta install npm
 packages=(
     eslint
     nodemon
-    ohmy
     tldr
     vtop
     pnpm

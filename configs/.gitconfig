@@ -1,13 +1,14 @@
 [user]
     name = carljohan
-    email = carljohan@ohmy.se
-    signingkey = 069F08E58E6CFF41
+    email = carljohan@hey.com
+	signingkey = 5B6C112899DE2C5A10755FF250500BAC87689BA5
 
 [github]
     user = carljohan
 
 [core]
     excludesfile = ~/.gitignore_global
+	editor = code --wait
 
 [alias]
     st = status
@@ -57,5 +58,10 @@
     oldHighlight = "red bold 52"
     newNormal = "green bold"
     newHighlight = "green bold 22"
+
+[gpg]
+    program = /opt/homebrew/bin/gpg
+
 [commit]
+    gpsign = true
     gpgsign = true

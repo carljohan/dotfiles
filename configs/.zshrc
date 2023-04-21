@@ -1,7 +1,7 @@
-ZSH_CUSTOM=$HOME/.dotfiles/config/all-config.zsh
+ZSH_CUSTOM=$HOME/.dotfiles/configs/all-config.zsh
 source $ZSH_CUSTOM
 
-PYTHON_CONFIG=$HOME/.dotfiles/config/python-config.zsh
+PYTHON_CONFIG=$HOME/.dotfiles/configs/python-config.zsh
 source $PYTHON_CONFIG
 
 # https://github.com/sindresorhus/quick-look-plugins install these?

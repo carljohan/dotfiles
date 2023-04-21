@@ -25,10 +25,12 @@ export WAKATIME_HOME=$HOME/.wakatime_config
 # VOLTA
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+#enable experimental PNPM support in Volta https://docs.volta.sh/advanced/pnpm
+export VOLTA_FEATURE_PNPM=1
 # VOLTA end
 
 # Load the oh-my-zsh's library.
-antigen use oh-my-zsh
+# antigen use oh-my-zsh
 
 # antigen bundle lukechilds/zsh-nvm
 antigen bundle git
@@ -51,7 +53,7 @@ antigen apply
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-alias zconf="code ~/.dotfiles/config/"
+alias zconf="code ~/.dotfiles/"
 
 alias ll="ls -a" # List all files including dotfiles
 

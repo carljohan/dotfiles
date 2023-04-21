@@ -1,21 +1,31 @@
 # Install Homebrew
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew update
-brew upgrade
+#!/bin/bash
+
 
 # Install packages
+# Get the list of installed packages
+installed_packages=$(brew list)
 
-apps=(
+packages=(
     git
     grep
     jq
     python
     antigen
-    volta
     dnsmasq
     pyenv
     gh
 )
 
-brew install "${apps[@]}"
+
+
+
+for package in "${packages[@]}"; do
+  if [[ $installed_packages == *"$package"* ]]; then
+    echo "Package '$package' is already installed."
+  else
+    echo "Package '$package' is not installed."
+    brew install "${package[@]}"
+  fi
+done

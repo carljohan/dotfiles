@@ -1,13 +1,20 @@
 
-brew install volta
 
-volta install node
-volta install npm
-# TODO: check if it works without starting of a new shell
-# . ~/.bash_profile
 
-# Globally install with npm
 
+# Get the list of installed tools with Volta
+
+
+# Check if pnpm command is available
+if ! command -v pnpm > /dev/null; then
+brew install pnpm
+fi
+
+
+
+/.bash_profile
+
+# Globally install with pnpm
 packages=(
     eslint
     nodemon
@@ -19,4 +26,8 @@ packages=(
     npm-check-updates
 )
 
-npm install -g "${packages[@]}"
+
+#!/bin/bash
+
+# Get the list of globally installed packages
+installed_packages=$(pnpm list -g --depth=0)

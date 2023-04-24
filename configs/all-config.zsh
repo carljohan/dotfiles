@@ -59,7 +59,7 @@ export PATH=$HOME/.node/bin:$PATH
 export GPG_TTY=$(tty)
 
 # # PNPM
-export PNPM_HOME="/Users/jopplas/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;

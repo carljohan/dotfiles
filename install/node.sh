@@ -11,23 +11,17 @@ brew install pnpm
 fi
 
 
-
-/.bash_profile
-
 # Globally install with pnpm
 packages=(
     eslint
     nodemon
     tldr
     vtop
-    pnpm
     @antfu/ni
     vercel
     npm-check-updates
 )
 
 
-#!/bin/bash
-
 # Get the list of globally installed packages
-installed_packages=$(pnpm list -g --depth=0)
+installed_packages=$(npm list -g --depth=0)

@@ -8,10 +8,10 @@ integer t0=$(date '+%s')
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
 
 
-#Activate antigen
-source $(brew --prefix)/share/antigen/antigen.zsh
 
 export WAKATIME_HOME=$HOME/.wakatime_config
+
+
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
@@ -26,27 +26,8 @@ export WAKATIME_HOME=$HOME/.wakatime_config
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 #enable experimental PNPM support in Volta https://docs.volta.sh/advanced/pnpm
-export VOLTA_FEATURE_PNPM=1
+# export VOLTA_FEATURE_PNPM=1
 # VOLTA end
-
-# Load the oh-my-zsh's library.
-# antigen use oh-my-zsh
-
-# antigen bundle lukechilds/zsh-nvm
-antigen bundle git
-antigen bundle command-not-found
-# antigen bundle zsh-users/zsh-syntax-highlighting //might be conflicting with fig.io(?)
-
-
-#Font used for terminal
-#MesloLGS NF
-
-# Antigen theme
-antigen theme spaceship-prompt/spaceship-prompt
-# antigen theme robbyrussell
-
-# Tell Antigen that you're done.
-antigen apply
 
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
@@ -58,6 +39,8 @@ alias zconf="code ~/.dotfiles/"
 alias ll="ls -a" # List all files including dotfiles
 
 alias c="code ." #open current dir in vscode
+
+alias reload="source ~/.zshrc" #reload zshrc
 
 # Fixing macOS zsh Terminal History Settings - https://blog.akatz.org/fixing-macos-zsh-terminal-history-settings/
 alias history="history 1"
@@ -75,15 +58,20 @@ export PATH=$HOME/.node/bin:$PATH
 # for gnupg
 export GPG_TTY=$(tty)
 
-# PNPM
+# # PNPM
 export PNPM_HOME="/Users/jopplas/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
 
 # Place .zcompdump in zsh cache folder as per - https://stackoverflow.com/questions/62931101/i-have-multiple-files-of-zcompdump-why-do-i-have-multiple-files-of-these
-#export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
+export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 
 
-# End of zshrc  (load time measure - https://stackoverflow.com/questions/4351244/can-i-profile-my-zshrc-zshenv/30791711#30791711)
+# End of zshrc (load time measure - https://stackoverflow.com/questions/4351244/can-i-profile-my-zshrc-zshenv/30791711#30791711)
 function {
     local -i t1 startup
     t1=$(date '+%s')

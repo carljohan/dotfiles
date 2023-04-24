@@ -12,10 +12,10 @@ packages=(
     grep
     jq
     python
-    antigen
-    dnsmasq
+    dnsmasq 
     pyenv
-    gh
+    gh # github CLI
+    antidote # https://getantidote.github.io/
 )
 
 

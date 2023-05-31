@@ -37,6 +37,7 @@ alias zconf="code ~/.dotfiles/"
 alias ll="ls -a" # List all files including dotfiles
 
 alias c="code ." #open current dir in vscode
+alias ci="code-insiders ." #open current dir in vscode insiders
 
 alias reload="source ~/.zshrc" #reload zshrc
 

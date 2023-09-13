@@ -1,10 +1,3 @@
-
-
-
-
-# Get the list of installed tools with Volta
-
-
 # Check if pnpm command is available
 if ! command -v pnpm > /dev/null; then
 brew install pnpm

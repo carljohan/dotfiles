@@ -20,13 +20,6 @@ export WAKATIME_HOME=$HOME/.wakatime_config
 # export NVM_AUTO_USE=true # https://github.com/lukechilds/zsh-nvm#auto-use=
 
 
-# VOLTA
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
-#enable experimental PNPM support in Volta https://docs.volta.sh/advanced/pnpm
-# export VOLTA_FEATURE_PNPM=1
-# VOLTA end
-
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh

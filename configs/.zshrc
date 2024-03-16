@@ -9,6 +9,8 @@ source $ZSH_PLUGINS
 ZSH_CUSTOM=$HOME/.dotfiles/configs/all-config.zsh
 source $ZSH_CUSTOM
 
+# Deno config
+source $HOME/.dotfiles/configs/deno.zsh
 
 # Python config
 PYTHON_CONFIG=$HOME/.dotfiles/configs/python-config.zsh

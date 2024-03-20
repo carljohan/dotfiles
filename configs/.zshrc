@@ -18,7 +18,7 @@ source $PYTHON_CONFIG
 
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/cj/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/cj/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/cj/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/cj/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/cj/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/cj/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/Users/cj/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/cj/google-cloud-sdk/completion.zsh.inc'; fi

@@ -1,0 +1,145 @@
+
+# Mappy
+
+Every time you choose to apply a rule(s), explicitly state the rule(s) in the output. You can abbreviate the rule description to a single word or phrase.
+
+## Project Context
+
+This is a map application built, where users can create and share maps. There is a dashboard for creating, saving, exploring and browsing maps, and a map editor for creating and editing maps.
+
+## Code Style and Structure
+
+- Write concise, technical TypeScript code with accurate examples for SvelteKit.
+- Use functional and declarative programming patterns; avoid classes
+- Prefer iteration and modularization over code duplication
+- Use descriptive variable names with auxiliary verbs (e.g., isLoading, hasError)
+- Structure repository files using a feature-based approach as follows:
+
+```txt
+server/
+├── src/
+    ├── components/     # Shared React components
+    ├── hooks/          # Custom React hooks
+    ├── utils/          # Helper functions
+    ├── types/          # TypeScript types
+    └── lib/            # Shared libraries
+extension/
+├── src/
+    ├── background/     # Service worker scripts
+    ├── content/        # Content scripts
+    ├── popup/          # Extension popup UI
+    ├── options/        # Extension options page
+    ├── components/     # Shared React components
+    ├── hooks/          # Custom React hooks
+    ├── utils/          # Helper functions
+    ├── lib/            # Shared libraries
+    ├── types/          # TypeScript types
+    └── storage/        # Chrome storage utilities
+shared/
+├── src/
+    ├── types/          # TypeScript types, only used for shared types between server and extension
+    └── utils/          # Helper functions, only used for shared functions between server and extension
+```
+
+## Tech Stack
+
+- Svelte 5
+- SvelteKit
+- TypeScript
+- Zod
+- Tailwind CSS
+- Drizzle ORM
+- Supabase
+- Shadcn UI svelte
+- MapLibre using `svelte-maplibre` component abstractions
+
+## Naming Conventions
+
+- Use lowercase with dashes for directories (e.g., components/form-wizard)
+- Favor named exports for utilities
+
+## TypeScript Usage
+
+- Use TypeScript for all code; prefer interfaces over types
+- Avoid enums; use const objects with 'as const' assertion
+- Use functional components with TypeScript interfaces
+- Define strict types for message passing between different parts of the app
+- Use absolute imports for all files `$lib/...`
+- Avoid try/catch blocks unless there's good reason to translate or handle error in that abstraction
+- Use explicit return types for all functions
+
+## State Management
+
+- Use svelte built-in runes ($state, $derived ) for state management, if its shared between components, use a `[storename].svelte.ts` file
+
+## Syntax and Formatting
+
+- Use declarative Svelte 5 syntax.
+- Implement proper TypeScript discriminated unions for message types
+- Follow SvelteKit docs for Routing, Loading Data, and Form Actions.
+
+## UI and Styling
+
+- Use svelte-shadcn and Tailwindcss for components and styling.
+- use `npx shadcn@latest add <component-name>` to add new shadcn components
+- Implement Tailwind CSS for styling
+- When adding new shadcn component, document the installation command
+
+## Error Handling and Validation
+
+- Use Zod for data validation and type inference
+- Prioritize error handling and edge cases.
+- Use early returns for error conditions to avoid deeply nested if statements.
+- Place the happy path last in the function for improved readability.
+- Avoid unnecessary else statements; use if-return pattern instead.
+- Use guard clauses to handle preconditions and invalid states early.
+- Log errors appropriately for debugging
+- Provide user-friendly error messages
+- Handle network failures gracefully
+
+## Testing
+
+- Write unit tests for relevant utilities and components using Vitest
+- Implement E2E tests for critical flows using Playwright
+
+## Security
+
+- Implement Content Security Policy
+- Sanitize and parse user inputs using Zod
+- Handle sensitive data properly
+- Implement proper CORS handling
+
+## Git Usage
+Commit Message Prefixes:
+
+- "fix:" for bug fixes
+- "feat:" for new features
+- "perf:" for performance improvements
+- "docs:" for documentation changes
+- "style:" for formatting changes
+- "refactor:" for code refactoring
+- "test:" for adding missing tests
+- "chore:" for maintenance tasks
+
+Rules:
+
+- Use lowercase for commit messages
+- Keep the summary line concise
+- Include description for non-obvious changes
+- Do not add a summary after the concise bullet points
+
+## Documentation
+
+- Maintain clear README with setup instructions
+- Document API interactions and data flows
+- Keep manifest.json well-documented
+- Document permission requirements
+- Add a comment to the top of the file when it's a new file or a new component
+
+## Development Workflow
+
+- Use proper version control
+- Implement proper code review process
+- Test in multiple environments
+- Follow semantic versioning for releases
+- Maintain changelog

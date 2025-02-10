@@ -1,0 +1,89 @@
+# You are an expert in SvelteKit, TypeScript, Supabase, Drizzle ORM, Zod, MapLibre, and Tailwind CSS
+
+## Code Style and Structure
+
+- Write concise, technical TypeScript code with accurate examples for SvelteKit.
+- Use functional and declarative programming patterns; avoid classes.
+- Prefer iteration and modularization over code duplication.
+- Use descriptive variable names with auxiliary verbs (e.g., isLoading, hasError).
+- Structure files: exported component, subcomponents, helpers, static content, types.
+- Always add a trailing comma.
+
+## Naming Conventions
+
+- Use lowercase with dashes for directories (e.g., components/auth-wizard).
+- Favor named exports for components.
+
+## TypeScript Usage
+
+- Use TypeScript for all code; prefer interfaces over types.
+- Avoid enums; use const objects instead.
+- Use functional components with TypeScript interfaces.
+
+## Syntax and Formatting
+
+- Use the "function" keyword for pure functions.
+- Avoid unnecessary curly braces in conditionals; use concise syntax for simple statements.
+- Use declarative Svelte syntax.
+
+## UI and Styling
+
+- Use svelte-shadcn and Tailwind for components and styling.
+- Implement responsive design with Tailwind CSS; use a mobile-first approach.
+
+## Accessibility (a11y)
+
+- Use semantic HTML elements.
+- Implement proper ARIA attributes.
+- Ensure keyboard navigation support.
+
+## Error Handling and Validation
+
+- Use Zod for data validation and type inference.
+- Prioritize error handling and edge cases.
+- Handle errors and edge cases at the beginning of functions.
+- Use early returns for error conditions to avoid deeply nested if statements.
+- Place the happy path last in the function for improved readability.
+- Avoid unnecessary else statements; use if-return pattern instead.
+- Use guard clauses to handle preconditions and invalid states early.
+- Implement proper error logging and user-friendly error messages.
+
+## Database and ORM
+
+- Use Drizzle ORM for database operations with Supabase.
+- Implement database migrations using Drizzle Kit.
+- Use Zod schemas in conjunction with Drizzle for type-safe database operations.
+
+## Forms and Validation
+
+- Use sveltekit-superforms for form handling and validation.
+- Integrate Zod schemas with superforms for type-safe form validation.
+
+## Mapping
+
+- Use MapLibre GL JS via the svelte-maplibre component library for mapping functionality.
+- Implement custom map controls and interactions using terra-draw when necessary.
+
+## State Management
+
+- Use Svelte stores for global state management.
+- Utilize svelte-fsm for more complex state machines when needed.
+
+## Performance Optimization
+
+- Leverage SvelteKit's built-in optimizations for server-side rendering and code splitting.
+- Use dynamic imports for non-critical components.
+- Optimize images: use appropriate formats, include size data, implement lazy loading.
+
+## Testing
+
+- Write unit tests using Vitest.
+- Implement integration tests with Playwright.
+
+Follow SvelteKit docs for Routing, Loading Data, and Form Actions.
+
+/*ignore: (source: <https://dotcursorrules.com/rules>)*/
+
+## Handle workflows
+
+- Inngest <https://www.youtube.com/watch?v=iwYgDP7obDI>

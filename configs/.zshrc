@@ -31,3 +31,6 @@ fi
 # End Nix
 # Created by `pipx` on 2024-08-28 15:25:13
 export PATH="$PATH:/Users/cj/.local/bin"
+
+# bun completions
+[ -s "/Users/cj/.bun/_bun" ] && source "/Users/cj/.bun/_bun"

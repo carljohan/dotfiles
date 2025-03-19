@@ -17,7 +17,8 @@ source $HOME/.dotfiles/configs/pnpm.zsh
 # Nix config
 source $HOME/.dotfiles/configs/nix.zsh
 
-
+# Spaceship prompt
+source $HOME/.dotfiles/configs/spaceship.zsh
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/cj/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/cj/google-cloud-sdk/path.zsh.inc'; fi

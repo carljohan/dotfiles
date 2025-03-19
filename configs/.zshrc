@@ -14,6 +14,9 @@ source $HOME/.dotfiles/configs/deno.zsh
 PYTHON_CONFIG=$HOME/.dotfiles/configs/python-config.zsh
 source $PYTHON_CONFIG
 
+# PNPM config
+source $HOME/.dotfiles/configs/pnpm.zsh
+
 # https://github.com/sindresorhus/quick-look-plugins install these?
 
 

@@ -54,13 +54,6 @@ export PATH=$HOME/.node/bin:$PATH
 # for gnupg
 export GPG_TTY=$(tty)
 
-# # PNPM
-export PNPM_HOME="$HOME/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
 
 
 # Place .zcompdump in zsh cache folder as per - https://stackoverflow.com/questions/62931101/i-have-multiple-files-of-zcompdump-why-do-i-have-multiple-files-of-these

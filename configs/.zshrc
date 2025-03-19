@@ -1,18 +1,15 @@
 # ZSH plyugins handled by antidote
-ZSH_PLUGINS=$HOME/.dotfiles/configs/zsh-plugins.zsh
-source $ZSH_PLUGINS
+source $HOME/.dotfiles/configs/zsh-plugins.zsh
 
 
 # TODO: rename this to more specific name
-ZSH_CUSTOM=$HOME/.dotfiles/configs/all-config.zsh
-source $ZSH_CUSTOM
+source $HOME/.dotfiles/configs/all-config.zsh
 
 # Deno config
 source $HOME/.dotfiles/configs/deno.zsh
 
 # Python config
-PYTHON_CONFIG=$HOME/.dotfiles/configs/python-config.zsh
-source $PYTHON_CONFIG
+source $HOME/.dotfiles/configs/python-config.zsh
 
 # PNPM config
 source $HOME/.dotfiles/configs/pnpm.zsh
@@ -20,7 +17,6 @@ source $HOME/.dotfiles/configs/pnpm.zsh
 # Nix config
 source $HOME/.dotfiles/configs/nix.zsh
 
-# https://github.com/sindresorhus/quick-look-plugins install these?
 
 
 # The next line updates PATH for the Google Cloud SDK.

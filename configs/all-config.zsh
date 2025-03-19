@@ -11,13 +11,6 @@ export WAKATIME_HOME=$HOME/.wakatime_config
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 
-# antigen files 
-# export NVM_COMPLETION=true  # https://github.com/lukechilds/zsh-nvm#nvm-completion=
-# export NVM_LAZY_LOAD=true # https://github.com/lukechilds/zsh-nvm#lazy-loading=
-# export NVM_AUTO_USE=true # https://github.com/lukechilds/zsh-nvm#auto-use=
-
-
-
 # java installed via homebrew PATH
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 

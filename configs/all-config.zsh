@@ -4,9 +4,6 @@ echo 'Config loaded from dotfiles'
 # Time the stuff.
 integer t0=$(date '+%s')
 
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
-
 export WAKATIME_HOME=$HOME/.wakatime_config
 
 
@@ -71,6 +68,3 @@ function {
 }
 unset t0
 
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

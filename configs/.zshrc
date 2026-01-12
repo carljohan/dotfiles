@@ -1,7 +1,6 @@
 # ZSH plyugins handled by antidote
 source $HOME/.dotfiles/configs/zsh-plugins.zsh
 
-
 # TODO: rename this to more specific name
 source $HOME/.dotfiles/configs/all-config.zsh
 
@@ -20,12 +19,14 @@ source $HOME/.dotfiles/configs/nix.zsh
 # Spaceship prompt
 source $HOME/.dotfiles/configs/spaceship.zsh
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/cj/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/cj/google-cloud-sdk/path.zsh.inc'; fi
+# Shortcuts
+source $HOME/.dotfiles/configs/shortcuts.zsh
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/cj/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/cj/google-cloud-sdk/completion.zsh.inc'; fi
+# Windsurf config
+source $HOME/.dotfiles/configs/windsurf.zsh
 
+# Google Cloud SDK config
+source $HOME/.dotfiles/configs/gcloud.zsh
 
-# bun completions
-[ -s "/Users/cj/.bun/_bun" ] && source "/Users/cj/.bun/_bun"
+# Bun config
+source $HOME/.dotfiles/configs/bun.zsh

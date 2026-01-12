@@ -13,6 +13,3 @@ source <(antidote init)
 antidote bundle spaceship-prompt/spaceship-prompt
 
 
-# antidote bundle command-not-found
-# antidote bundle git
-

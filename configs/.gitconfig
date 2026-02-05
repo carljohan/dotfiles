@@ -49,3 +49,5 @@
     oldHighlight = "red bold 52"
     newNormal = "green bold"
     newHighlight = "green bold 22"
+[http]
+    sslCAInfo = /opt/homebrew/opt/ca-certificates/share/ca-certificates/cacert.pem

@@ -1,0 +1,10 @@
+auth.json
+models_cache.json
+sessions/
+sqlite/
+shell_snapshots/
+tmp/
+superpowers/
+vendor_imports/
+.codex-global-state.json
+.personality_migration

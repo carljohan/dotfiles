@@ -1,5 +1,5 @@
 model = "gpt-5.3-codex"
-model_reasoning_effort = "high"
+model_reasoning_effort = "xhigh"
 personality = "none"
 suppress_unstable_features_warning = true
 web_search = "live"

@@ -10,7 +10,6 @@ network_access = true
 [features]
 unified_exec = true
 shell_snapshot = true
-collab = true
 collaboration_modes = true
 steer = true
 

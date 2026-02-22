@@ -51,3 +51,5 @@
     newHighlight = "green bold 22"
 [http]
     sslCAInfo = /opt/homebrew/opt/ca-certificates/share/ca-certificates/cacert.pem
+[rerere]
+	enabled = true

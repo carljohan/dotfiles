@@ -1,17 +1,129 @@
-model = "gpt-5.3-codex"
+model = "gpt-5.5"
 model_reasoning_effort = "xhigh"
-personality = "none"
+personality = "pragmatic"
 suppress_unstable_features_warning = true
 web_search = "live"
+approval_policy = "never"
+sandbox_mode = "workspace-write"
+
+notify = ["/Users/cj/.codex/plugins/cache/openai-bundled/computer-use/1.0.750/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
 
 [sandbox_workspace_write]
 network_access = true
+
+[projects."/Users/cj/code"]
+trust_level = "trusted"
 
 [features]
 unified_exec = true
 shell_snapshot = true
 collaboration_modes = true
 steer = true
+multi_agent = true
 
 [notice]
-hide_rate_limit_model_nudge = true
+hide_rate_limit_model_nudge = false
+
+[[skills.config]]
+path = "/Users/cj/.codex/skills/brainstorming/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/cj/.codex/skills/executing-plans/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/cj/.codex/skills/dispatching-parallel-agents/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/cj/.codex/skills/verification-before-completion/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/cj/.codex/skills/writing-plans/SKILL.md"
+enabled = false
+
+[[skills.config]]
+name = "build-web-apps:deploy-to-vercel"
+enabled = false
+
+[[skills.config]]
+name = "build-web-apps:stripe-best-practices"
+enabled = false
+
+[mcp_servers.linear]
+url = "https://mcp.linear.app/mcp"
+
+[mcp_servers.playwright]
+command = "npx"
+args = ["@playwright/mcp@latest"]
+enabled = false
+
+[mcp_servers.posthog]
+url = "https://mcp.posthog.com/mcp"
+
+[mcp_servers.chrome-devtools]
+command = "npx"
+args = ["chrome-devtools-mcp@latest"]
+
+[mcp_servers.chrome-devtools.tools.fill]
+approval_mode = "approve"
+
+[mcp_servers.chrome-devtools.tools.take_snapshot]
+approval_mode = "approve"
+
+[mcp_servers.chrome-devtools.tools.press_key]
+approval_mode = "approve"
+
+[mcp_servers.chrome-devtools.tools.fill_form]
+approval_mode = "approve"
+
+[mcp_servers.chrome-devtools.tools.new_page]
+approval_mode = "approve"
+
+[mcp_servers.chrome-devtools.tools.take_screenshot]
+approval_mode = "approve"
+
+[projects."/Users/cj/code/placetide"]
+trust_level = "trusted"
+
+[projects."/Users/cj/code/brickanta"]
+trust_level = "trusted"
+
+[projects."/Users/cj"]
+trust_level = "trusted"
+
+[plugins."github@openai-curated"]
+enabled = true
+
+[plugins."linear@openai-curated"]
+enabled = true
+
+[plugins."build-web-apps@openai-curated"]
+enabled = true
+
+[plugins."computer-use@openai-bundled"]
+enabled = true
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."browser-use@openai-bundled"]
+enabled = true
+
+[marketplaces.openai-bundled]
+last_updated = "2026-05-03T21:15:27Z"
+source_type = "local"
+source = "/Users/cj/.codex/.tmp/bundled-marketplaces/openai-bundled"
+
+[marketplaces.openai-primary-runtime]
+last_updated = "2026-05-03T21:58:17Z"
+source_type = "local"
+source = "/Users/cj/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"

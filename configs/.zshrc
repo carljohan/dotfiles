@@ -30,3 +30,7 @@ source $HOME/.dotfiles/configs/gcloud.zsh
 
 # Bun config
 source $HOME/.dotfiles/configs/bun.zsh
+
+# DevTree config
+source $HOME/.dotfiles/configs/devtree.zsh
+

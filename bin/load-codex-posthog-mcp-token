@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+service_name="codex-posthog-mcp-token"
+account_name="${USER:-$(id -un)}"
+
+token="$(security find-generic-password -a "$account_name" -s "$service_name" -w 2>/dev/null || true)"
+
+if [[ -z "$token" ]]; then
+  launchctl unsetenv MCP_BEARER_TOKEN 2>/dev/null || true
+  exit 0
+fi
+
+launchctl setenv MCP_BEARER_TOKEN "$token"

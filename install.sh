@@ -77,5 +77,20 @@ fi
 if [[ $OSTYPE == 'darwin'* ]]; then
     echo 'macOS detected, installing cask apps'
     . "$DOTFILES_DIR/install/brew-cask.sh"
-fi
 
+    mkdir -p "$HOME/Library/LaunchAgents"
+    launch_agents=(
+        com.cj.codex-posthog-mcp-token.plist
+    )
+
+    for launch_agent in "${launch_agents[@]}"; do
+      full_path="$HOME/Library/LaunchAgents/$launch_agent"
+      target_path="$DOTFILES_DIR/launchagents/$launch_agent"
+      if [ ! -L "$full_path" ]; then
+        echo "Symlink '$full_path' does not exist, creating it from .dotfiles"
+        ln -s "$target_path" "$full_path"
+      else
+        echo "Symlink '$full_path' already exists."
+      fi
+    done
+fi

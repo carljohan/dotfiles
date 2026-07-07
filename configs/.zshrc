@@ -1,4 +1,4 @@
-# ZSH plyugins handled by antidote
+# ZSH plugins handled by antidote
 source $HOME/.dotfiles/configs/zsh-plugins.zsh
 
 # TODO: rename this to more specific name
@@ -34,3 +34,5 @@ source $HOME/.dotfiles/configs/bun.zsh
 # DevTree config
 source $HOME/.dotfiles/configs/devtree.zsh
 
+# Vite+ config
+source $HOME/.dotfiles/configs/vite-plus.zsh

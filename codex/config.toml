@@ -1,17 +1,41 @@
 model = "gpt-5.5"
-model_reasoning_effort = "xhigh"
+model_reasoning_effort = "high"
 personality = "pragmatic"
 suppress_unstable_features_warning = true
 web_search = "live"
 approval_policy = "never"
 sandbox_mode = "workspace-write"
-
-notify = ["/Users/cj/.codex/plugins/cache/openai-bundled/computer-use/1.0.750/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
+notify = [
+    "/Users/cj/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient",
+    "turn-ended",
+]
+service_tier = "default"
 
 [sandbox_workspace_write]
 network_access = true
 
 [projects."/Users/cj/code"]
+trust_level = "trusted"
+
+[projects."/Users/cj/code/placetide"]
+trust_level = "trusted"
+
+[projects."/Users/cj/code/brickanta"]
+trust_level = "trusted"
+
+[projects."/Users/cj"]
+trust_level = "trusted"
+
+[projects."/Users/cj/code/Brickanta-claude-code"]
+trust_level = "trusted"
+
+[projects."/Users/cj/code/brickanta-workspace/brickanta"]
+trust_level = "trusted"
+
+[projects."/Users/cj/code/minimal-agent"]
+trust_level = "trusted"
+
+[projects."/Users/cj/code/brickanta-root/brickanta"]
 trust_level = "trusted"
 
 [features]
@@ -20,9 +44,10 @@ shell_snapshot = true
 collaboration_modes = true
 steer = true
 multi_agent = true
+js_repl = false
 
 [notice]
-hide_rate_limit_model_nudge = false
+hide_rate_limit_model_nudge = true
 
 [[skills.config]]
 path = "/Users/cj/.codex/skills/brainstorming/SKILL.md"
@@ -45,15 +70,37 @@ path = "/Users/cj/.codex/skills/writing-plans/SKILL.md"
 enabled = false
 
 [[skills.config]]
-name = "build-web-apps:deploy-to-vercel"
+path = "/Users/cj/.codex/skills/writing-skills/SKILL.md"
 enabled = false
 
 [[skills.config]]
-name = "build-web-apps:stripe-best-practices"
+path = "/Users/cj/.agents/skills/zoom-out/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/cj/.agents/skills/diagnose/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/cj/.agents/skills/design-an-interface/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/cj/.agents/skills/find-skills/SKILL.md"
+enabled = false
+
+
+[[skills.config]]
+path = "/Users/cj/.agents/skills/teach/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/cj/.agents/skills/request-refactor-plan/SKILL.md"
 enabled = false
 
 [mcp_servers.linear]
 url = "https://mcp.linear.app/mcp"
+enabled = false
 
 [mcp_servers.playwright]
 command = "npx"
@@ -63,6 +110,11 @@ enabled = false
 [mcp_servers.posthog]
 url = "https://mcp.posthog.com/mcp"
 bearer_token_env_var = "MCP_BEARER_TOKEN"
+enabled = false
+
+[mcp_servers.inngest-dev]
+url = "http://localhost:8288/mcp"
+enabled = false
 
 [mcp_servers.chrome-devtools]
 command = "npx"
@@ -86,25 +138,56 @@ approval_mode = "approve"
 [mcp_servers.chrome-devtools.tools.take_screenshot]
 approval_mode = "approve"
 
-[projects."/Users/cj/code/placetide"]
-trust_level = "trusted"
+[mcp_servers.node_repl]
+args = []
+command = "/Applications/Codex.app/Contents/Resources/cua_node/bin/node_repl"
+startup_timeout_sec = 120
 
-[projects."/Users/cj/code/brickanta"]
-trust_level = "trusted"
+[mcp_servers.node_repl.env]
+NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
+NODE_REPL_NODE_MODULE_DIRS = "/Applications/Codex.app/Contents/Resources/cua_node/lib/node_modules"
+NODE_REPL_NODE_PATH = "/Applications/Codex.app/Contents/Resources/cua_node/bin/node"
+NODE_REPL_TRUSTED_CODE_PATHS = "/Users/cj/.codex"
+CODEX_HOME = "/Users/cj/.codex"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "97669f77b3ca7114a2df05d55646416ea34b28100c07213ef9f643803449ef2f"
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
+BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
+BROWSER_USE_CODEX_APP_VERSION = "26.623.141536"
+CODEX_CLI_PATH = "/Applications/Codex.app/Contents/Resources/codex"
 
-[projects."/Users/cj"]
-trust_level = "trusted"
+[mcp_servers.excalidraw]
+command = "node"
+args = [
+    "/Users/cj/Library/Application Support/Claude/Claude Extensions/local.mcpb.anton-pidkuiko.excalidraw-mcp-app/dist/index.js",
+    "--stdio",
+]
+enabled = false
+
+[mcp_servers.langsmith]
+url = "https://eu.api.smith.langchain.com/mcp"
+enabled = false
 
 [plugins."github@openai-curated"]
 enabled = true
 
 [plugins."linear@openai-curated"]
-enabled = true
+enabled = false
+
+[plugins."linear@openai-curated-remote"]
+enabled = false
+
+[plugins."convex@openai-curated-remote"]
+enabled = false
+
+[plugins."cloudflare@openai-curated"]
+enabled = false
+
+[plugins."cloudflare@openai-curated-remote"]
+enabled = false
 
 [plugins."build-web-apps@openai-curated"]
-enabled = true
-
-[plugins."computer-use@openai-bundled"]
 enabled = true
 
 [plugins."documents@openai-primary-runtime"]
@@ -116,15 +199,74 @@ enabled = true
 [plugins."presentations@openai-primary-runtime"]
 enabled = true
 
-[plugins."browser-use@openai-bundled"]
+[plugins."circleback@openai-curated"]
 enabled = true
 
+[plugins."sites@openai-bundled"]
+enabled = false
+
+[plugins."posthog@claude-plugins-official"]
+enabled = false
+
+[plugins."pdf@openai-primary-runtime"]
+enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[plugins."workos@claude-plugins-official"]
+enabled = false
+
+[plugins."template-creator@openai-primary-runtime"]
+enabled = false
+
 [marketplaces.openai-bundled]
-last_updated = "2026-05-04T20:55:47Z"
+last_updated = "2026-07-07T09:41:48Z"
 source_type = "local"
 source = "/Users/cj/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [marketplaces.openai-primary-runtime]
-last_updated = "2026-05-03T21:58:17Z"
+last_updated = "2026-07-01T08:51:54Z"
 source_type = "local"
 source = "/Users/cj/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
+
+[desktop]
+appearanceLightCodeThemeId = "notion"
+usePointerCursors = false
+followUpQueueMode = "steer"
+preventSleepWhileRunning = true
+keepRemoteControlAwakeWhilePluggedIn = true
+git-branch-prefix = "codex/"
+git-create-pull-request-as-draft = false
+git-pull-request-merge-method = "squash"
+git-show-sidebar-pr-icons = true
+git-pr-instructions = "always use conventional commit pattern for title, such as `fix:`, `chore:` `feat:` etc"
+default-service-tier = "priority"
+
+[desktop.appearanceLightChromeTheme]
+accent = "#3183d8"
+contrast = 45
+ink = "#37352f"
+opaqueWindows = true
+surface = "#ffffff"
+
+[desktop.appearanceLightChromeTheme.fonts]
+
+[desktop.appearanceLightChromeTheme.semanticColors]
+diffAdded = "#008000"
+diffRemoved = "#a31515"
+skill = "#0000ff"
+
+[desktop.open-in-target-preferences]
+global = "cursor"
+
+[desktop.open-in-target-preferences.perPath]
+"/Users/cj/code/placetide" = "cursor"
+
+[tui.model_availability_nux]
+"gpt-5.5" = 2
+
+[hooks.state]
+
+[hooks.state."posthog@claude-plugins-official:hooks/hooks.json:pre_tool_use:0:0"]
+trusted_hash = "sha256:3dc55a922b47b9418381076dbfc51fbe2a5bdbe2f86469022c5df91eed9c5c52"

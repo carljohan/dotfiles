@@ -3,7 +3,7 @@ model_reasoning_effort = "high"
 personality = "pragmatic"
 suppress_unstable_features_warning = true
 web_search = "live"
-approval_policy = "never"
+approval_policy = "on-request"
 sandbox_mode = "workspace-write"
 notify = [
     "/Users/cj/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient",
@@ -227,7 +227,7 @@ enabled = true
 enabled = true
 
 [marketplaces.openai-bundled]
-last_updated = "2026-07-29T08:33:58Z"
+last_updated = "2026-07-30T10:40:59Z"
 source_type = "local"
 source = "/Users/cj/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
@@ -249,7 +249,7 @@ git-show-sidebar-pr-icons = true
 git-pr-instructions = "always use conventional commit pattern for title, such as `fix:`, `chore:` `feat:` etc"
 default-service-tier = "priority"
 dock-icon-preference = "codex-system"
-conversationDetailMode = "STEPS_PROSE"
+conversationDetailMode = "STEPS_COMMANDS"
 
 [desktop.appearanceLightChromeTheme]
 accent = "#3183d8"

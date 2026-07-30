@@ -39,6 +39,7 @@ collaboration_modes = true
 steer = true
 multi_agent = true
 js_repl = false
+memories = true
 
 [notice]
 hide_rate_limit_model_nudge = true
@@ -237,7 +238,7 @@ source_type = "local"
 source = "/Users/cj/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
 
 [desktop]
-appearanceLightCodeThemeId = "notion"
+appearanceLightCodeThemeId = "one"
 usePointerCursors = false
 followUpQueueMode = "steer"
 preventSleepWhileRunning = true
@@ -250,20 +251,27 @@ git-pr-instructions = "always use conventional commit pattern for title, such as
 default-service-tier = "priority"
 dock-icon-preference = "codex-system"
 conversationDetailMode = "STEPS_COMMANDS"
+show-context-window-usage = true
+hotkey-window-projectless-default-enabled = true
+appearanceTheme = "system"
+enabled-reasoning-efforts = ["low", "medium", "high", "xhigh", "ultra", "max"]
+avatar-overlay-mascot-width-px = 103
+selected-avatar-id = "fireball"
 
 [desktop.appearanceLightChromeTheme]
-accent = "#3183d8"
+accent = "#526fff"
 contrast = 45
-ink = "#37352f"
+ink = "#383a42"
 opaqueWindows = true
-surface = "#ffffff"
+surface = "#fafafa"
 
 [desktop.appearanceLightChromeTheme.fonts]
+ui = "Inter"
 
 [desktop.appearanceLightChromeTheme.semanticColors]
-diffAdded = "#008000"
-diffRemoved = "#a31515"
-skill = "#0000ff"
+diffAdded = "#3bba54"
+diffRemoved = "#e45649"
+skill = "#526fff"
 
 [desktop.open-in-target-preferences]
 global = "cursor"
@@ -281,3 +289,7 @@ trusted_hash = "sha256:3dc55a922b47b9418381076dbfc51fbe2a5bdbe2f86469022c5df91ee
 BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
 NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "14e425736668bf21b5b39f2cc022ee8684728617fb5c49f35533c2e349f47193,6d25aa7656feac858f3a3bdaea5bcbab0dbfd426c9de8e6931ce90c399ee8e4f"
 NODE_REPL_TRUSTED_CODE_PATHS = "/Users/cj/.codex"
+
+[memories]
+generate_memories = true
+use_memories = true

@@ -3,16 +3,46 @@ model_reasoning_effort = "high"
 personality = "pragmatic"
 suppress_unstable_features_warning = true
 web_search = "live"
-approval_policy = "on-request"
-sandbox_mode = "workspace-write"
 notify = [
     "/Users/cj/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient",
     "turn-ended",
 ]
 service_tier = "default"
 
-[sandbox_workspace_write]
-network_access = true
+# Ask only when Codex needs to cross the active permission boundary.
+approval_policy = "on-request"
+approvals_reviewer = "user"
+
+# Select the custom permission profile below.
+default_permissions = "trusted-workspace"
+
+[permissions.trusted-workspace]
+description = "Full autonomy inside the workspace with public network access."
+extends = ":workspace"
+
+[permissions.trusted-workspace.filesystem]
+# Prevent reading or writing elsewhere on the computer without approval.
+":root" = "deny"
+
+# Allow required operating-system binaries, runtimes, and libraries.
+":minimal" = "read"
+
+# Allow normal build, cache, and temporary-file activity.
+":tmpdir" = "write"
+
+# Allow writing to the shared /tmp directory.
+":slash_tmp" = "write"
+
+[permissions.trusted-workspace.filesystem.":workspace_roots"]
+# Full read/write access in the active workspace.
+"." = "write"
+
+[permissions.trusted-workspace.network]
+enabled = true
+
+[permissions.trusted-workspace.network.domains]
+# Equivalent public-network freedom to network_access = true.
+"*" = "allow"
 
 [projects."/Users/cj/code"]
 trust_level = "trusted"

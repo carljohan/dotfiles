@@ -1,0 +1,12 @@
+[core]
+    editor = cursor --wait
+    pager = delta
+
+[user]
+    signingkey = 0C280EB70B22BBBD6A8DABFFCD6EECDB6CA64E5F
+
+[gpg]
+    program = gpg
+
+[commit]
+    gpgsign = true

@@ -1,0 +1,15 @@
+[bootstrap.packages]
+"brew:gh" = "latest"
+"brew:git" = "latest"
+"brew:git-delta" = "latest"
+"brew:gnupg" = "latest"
+"brew:jq" = "latest"
+"brew:pinentry-mac" = "latest"
+"brew:ripgrep" = "latest"
+"brew:shellcheck" = "latest"
+
+[dotfiles]
+"~/.config/git/platform" = { source = "dotfiles/macos/git-platform", mode = "symlink" }
+"~/.zprofile" = { source = "dotfiles/macos/zprofile", mode = "symlink" }
+"~/.zshenv" = { source = "dotfiles/macos/zshenv", mode = "symlink" }
+"~/.zshrc" = { source = "dotfiles/macos/zshrc", mode = "symlink" }

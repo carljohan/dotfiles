@@ -1,22 +1,15 @@
+[include]
+    path = ~/.config/git/platform
+
 [core]
     excludesfile = ~/.gitignore_global
-	editor = cursor --wait
-    pager = delta
 
 [user]
     name = carljohan
     email = carljohan@hey.com
-	signingkey = 0C280EB70B22BBBD6A8DABFFCD6EECDB6CA64E5F
 
 [github]
     user = carljohan
-
-[gpg]
-    program = /opt/homebrew/bin/gpg
-
-[commit]
-    gpsign = true
-    gpgsign = true
 
 [alias]
     undo = reset --soft HEAD~
@@ -49,14 +42,9 @@
     oldHighlight = "red bold 52"
     newNormal = "green bold"
     newHighlight = "green bold 22"
-[http]
-    sslCAInfo = /opt/homebrew/opt/ca-certificates/share/ca-certificates/cacert.pem
+
 [rerere]
-	enabled = true
+    enabled = true
+
 [init]
-	defaultBranch = main
-[filter "lfs"]
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
+    defaultBranch = main

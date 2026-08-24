@@ -1,0 +1,16 @@
+case $- in
+  *i*) ;;
+  *) return ;;
+esac
+
+export PATH="$HOME/.local/bin:$PATH"
+
+HISTCONTROL=ignoreboth:erasedups
+HISTSIZE=50000
+HISTFILESIZE=50000
+
+alias ll='ls -la'
+
+if [[ -x "$HOME/.local/bin/mise" ]]; then
+  eval "$("$HOME/.local/bin/mise" activate bash)"
+fi

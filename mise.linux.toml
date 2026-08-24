@@ -1,0 +1,11 @@
+[bootstrap.packages]
+"apt:curl" = "latest"
+"apt:git" = "latest"
+"apt:jq" = "latest"
+"apt:ripgrep" = "latest"
+"apt:shellcheck" = "latest"
+
+[dotfiles]
+"~/.bash_profile" = { source = "dotfiles/linux/bash_profile", mode = "symlink" }
+"~/.bashrc" = { source = "dotfiles/linux/bashrc", mode = "symlink" }
+"~/.config/git/platform" = { source = "dotfiles/linux/git-platform", mode = "symlink" }

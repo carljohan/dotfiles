@@ -4,3 +4,7 @@
 
 
 # add sensitive files here
+.DS_Store
+mise.local.toml
+mise.*.local.toml
+codex/config.toml

@@ -1,0 +1,19 @@
+min_version = "2026.8.0"
+
+[settings]
+lockfile = true
+not_found_auto_install = false
+
+[tools]
+node = "24.13.1"
+pnpm = "11.11.0"
+python = "3.14.3"
+uv = "0.10.9"
+
+[dotfiles]
+"~/.gitconfig" = { source = "dotfiles/common/gitconfig", mode = "symlink" }
+"~/.gitignore_global" = { source = "dotfiles/common/gitignore_global", mode = "symlink" }
+"~/.config/mise/config.toml" = { source = "mise.toml", mode = "symlink" }
+"~/.config/mise/config.macos.toml" = { source = "mise.macos.toml", mode = "symlink" }
+"~/.config/mise/config.linux.toml" = { source = "mise.linux.toml", mode = "symlink" }
+"~/.config/mise/miserc.toml" = { source = ".miserc.toml", mode = "symlink" }

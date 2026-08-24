@@ -1,0 +1,41 @@
+typeset -U path PATH
+
+# Interactive history.
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=50000
+SAVEHIST=50000
+setopt append_history share_history hist_ignore_all_dups hist_save_no_dups
+
+# Small, portable defaults.
+alias ll='ls -la'
+alias c='code .'
+alias reload='exec zsh -l'
+alias zconf='code "$HOME/code/github.com/carljohan/dotfiles"'
+
+yt-dlmp4() {
+  yt-dlp --merge-output-format mp4 --postprocessor-args "ffmpeg:-preset veryfast" "$@"
+}
+
+autoload -Uz colors && colors
+PROMPT='%F{cyan}%1~%f %# '
+
+if [[ -t 1 ]]; then
+  export GPG_TTY="$(tty)"
+fi
+
+# Active application-owned CLI integrations that are not runtime managers.
+[[ -r "$HOME/.vite-plus/env" ]] && source "$HOME/.vite-plus/env"
+[[ -d "$HOME/.codeium/windsurf/bin" ]] && path=("$HOME/.codeium/windsurf/bin" $path)
+if [[ -r "$HOME/google-cloud-sdk/path.zsh.inc" ]]; then
+  source "$HOME/google-cloud-sdk/path.zsh.inc"
+fi
+if [[ -r "$HOME/google-cloud-sdk/completion.zsh.inc" ]]; then
+  source "$HOME/google-cloud-sdk/completion.zsh.inc"
+fi
+
+# Keep mise last so project runtime selections take precedence.
+if [[ -x "$HOME/.local/bin/mise" ]]; then
+  eval "$("$HOME/.local/bin/mise" activate zsh)"
+fi
+
+typeset -U path PATH

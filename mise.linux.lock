@@ -2,6 +2,16 @@
 
 lockfile_version = 1
 
+[[tools."npm:@anthropic-ai/claude-code"]]
+version = "2.1.241"
+backend = "npm:@anthropic-ai/claude-code"
+specifiers = ["2.1.241"]
+
+[[tools."npm:@openai/codex"]]
+version = "0.149.1"
+backend = "npm:@openai/codex"
+specifiers = ["0.149.1"]
+
 [[tools.ripgrep]]
 version = "15.2.0"
 backend = "aqua:BurntSushi/ripgrep"

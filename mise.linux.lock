@@ -7,6 +7,9 @@ version = "2.1.241"
 backend = "npm:@anthropic-ai/claude-code"
 specifiers = ["2.1.241"]
 
+[tools."npm:@anthropic-ai/claude-code".options]
+allow_builds = '["@anthropic-ai/claude-code"]'
+
 [[tools."npm:@openai/codex"]]
 version = "0.149.1"
 backend = "npm:@openai/codex"

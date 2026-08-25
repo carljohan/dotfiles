@@ -17,6 +17,7 @@ Install mise using its official installer, clone this repository to the canonica
 ```sh
 curl -fsSL https://mise.run | sh
 cd ~/code/github.com/carljohan/dotfiles
+~/.local/bin/mise trust
 ~/.local/bin/mise bootstrap plan
 ~/.local/bin/mise bootstrap --dry-run
 ~/.local/bin/mise bootstrap

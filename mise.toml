@@ -16,4 +16,3 @@ uv = "0.10.9"
 "~/.config/mise/config.toml" = { source = "mise.toml", mode = "symlink" }
 "~/.config/mise/config.macos.toml" = { source = "mise.macos.toml", mode = "symlink" }
 "~/.config/mise/config.linux.toml" = { source = "mise.linux.toml", mode = "symlink" }
-"~/.config/mise/miserc.toml" = { source = ".miserc.toml", mode = "symlink" }

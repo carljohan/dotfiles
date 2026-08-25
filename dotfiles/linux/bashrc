@@ -1,3 +1,5 @@
+export MISE_AUTO_ENV=true
+
 case $- in
   *i*) ;;
   *) return ;;

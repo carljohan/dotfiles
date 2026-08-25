@@ -1,1 +1,2 @@
 # Keep non-interactive Zsh free of project-specific runtime initialization.
+export MISE_AUTO_ENV=true

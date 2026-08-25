@@ -1,11 +1,10 @@
 export MISE_AUTO_ENV=true
+export PATH="$HOME/.local/bin:$HOME/.local/share/mise/shims:$PATH"
 
 case $- in
   *i*) ;;
   *) return ;;
 esac
-
-export PATH="$HOME/.local/bin:$PATH"
 
 HISTCONTROL=ignoreboth:erasedups
 HISTSIZE=50000

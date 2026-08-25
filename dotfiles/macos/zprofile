@@ -6,7 +6,7 @@ elif [[ -x /usr/local/bin/brew ]]; then
 fi
 
 typeset -U path PATH
-path=("$HOME/.local/bin" $path)
+path=("$HOME/.local/bin" "$HOME/.local/share/mise/shims" $path)
 
 # OrbStack owns this integration when installed.
 [[ -r "$HOME/.orbstack/shell/init.zsh" ]] && source "$HOME/.orbstack/shell/init.zsh"

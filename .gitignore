@@ -1,10 +1,6 @@
-# macos files
 .DS_Store
 **/.DS_Store
 
-
-# add sensitive files here
-.DS_Store
+# Machine-local mise overrides.
 mise.local.toml
 mise.*.local.toml
-codex/config.toml

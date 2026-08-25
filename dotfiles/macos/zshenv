@@ -1,2 +1,2 @@
-# Keep non-interactive Zsh free of project-specific runtime initialization.
+# Select the platform-specific global mise config before normal config loading.
 export MISE_AUTO_ENV=true

@@ -10,6 +10,8 @@ Public, secret-free shell, Git, and machine bootstrap declarations for Carl Joha
 
 Mise is the single bootstrap entrypoint. `mise.toml` contains common declarations, while `mise.macos.toml` and `mise.linux.toml` are selected automatically by the current platform.
 
+The committed `.miserc.toml` enables platform selection during the first bootstrap. Shell startup exports the same early mise setting before the global platform config is discovered.
+
 ## Bootstrap
 
 Install mise using its official installer, clone this repository to the canonical path, and inspect the plan before applying it:
@@ -20,10 +22,21 @@ cd ~/code/github.com/carljohan/dotfiles
 ~/.local/bin/mise trust
 ~/.local/bin/mise bootstrap plan
 ~/.local/bin/mise bootstrap --dry-run
-~/.local/bin/mise bootstrap
+~/.local/bin/mise bootstrap --locked
 ```
 
-Run `mise doctor` and open a fresh shell after applying changes.
+Run `mise bootstrap status` and `mise doctor`, then open a fresh shell.
+
+## Update an existing machine
+
+```sh
+git pull --ff-only
+mise trust
+mise bootstrap plan
+mise bootstrap --locked
+```
+
+Tool versions are deliberately pinned and locked for the supported `macos-arm64` laptop and `linux-x64` Bifrost targets. When changing one, update the relevant `mise*.toml`, run `mise lock --global`, review the matching committed lockfile, and bootstrap both machines before pushing.
 
 ## Ownership boundaries
 

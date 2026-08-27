@@ -1,10 +1,8 @@
-typeset -U path PATH
-
 # Interactive history.
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=50000
 SAVEHIST=50000
-setopt append_history share_history hist_ignore_all_dups hist_save_no_dups
+setopt share_history hist_ignore_all_dups hist_save_no_dups
 
 # Small, portable defaults.
 alias ll='ls -la'
@@ -16,7 +14,7 @@ yt-dlmp4() {
   yt-dlp --merge-output-format mp4 --postprocessor-args "ffmpeg:-preset veryfast" "$@"
 }
 
-autoload -Uz colors && colors
+# Fallback when Starship is unavailable.
 PROMPT='%F{cyan}%1~%f %# '
 
 if [[ -t 1 ]]; then
@@ -31,5 +29,6 @@ if command -v starship >/dev/null 2>&1; then
   eval "$(starship init zsh)"
 fi
 
+# Prefer stable mise shims over version-specific activation paths.
 typeset -U path PATH
 path=("$HOME/.local/share/mise/shims" $path)

@@ -37,6 +37,8 @@ disabled = true
 [gcloud]
 disabled = true
 
+# This module runs a full `mise doctor` check rather than showing tool versions,
+# so keep it from adding health-check latency to prompts in mise projects.
 [mise]
 disabled = true
 

@@ -1,39 +1,27 @@
 # dotfiles
 
-Public, secret-free shell, Git, and machine bootstrap declarations for Carl Johan's development environments.
+Shell, Git, and machine bootstrap for my development environments. Public, secret-free, and driven entirely by [mise](https://mise.jdx.dev).
 
-## Canonical checkout
+Canonical checkout: `~/code/github.com/carljohan/dotfiles`
 
-```text
-~/code/github.com/carljohan/dotfiles
-```
+## New machine
 
-Mise is the single bootstrap entrypoint. `mise.toml` contains common declarations, while `mise.macos.toml` and `mise.linux.toml` are selected automatically by the current platform.
-
-The macOS profile also declares the Homebrew formulae and casks expected on a personal development laptop. Developer and personal workstation applications are grouped separately in that file, but use the same bootstrap path; neither group applies to Linux servers or cloud environments.
-
-Applications intentionally managed outside bootstrap are recorded in
-[`docs/macos-app-inventory.md`](docs/macos-app-inventory.md).
-
-The committed `.miserc.toml` enables platform selection during the first bootstrap. Shell startup exports the same early mise setting before the global platform config is discovered.
-Mise shims are placed on `PATH` before interactive-shell setup so SSH commands, agents, and background tools resolve the same pinned runtimes.
-
-## Bootstrap
-
-Install mise using its official installer, clone this repository to the canonical path, and inspect the plan before applying it:
+Copy, paste, done:
 
 ```sh
 curl -fsSL https://mise.run | sh
+git clone https://github.com/carljohan/dotfiles.git ~/code/github.com/carljohan/dotfiles
 cd ~/code/github.com/carljohan/dotfiles
 ~/.local/bin/mise trust
 ~/.local/bin/mise bootstrap plan
-~/.local/bin/mise bootstrap --dry-run
 ~/.local/bin/mise bootstrap --locked
 ```
 
-Run `mise bootstrap status` and `mise doctor`, then open a fresh shell.
+On a fresh Mac, the `git clone` triggers the Xcode Command Line Tools install — accept it, then rerun the commands from `git clone` onward. That's the only manual step.
 
-## Update an existing machine
+Check with `mise bootstrap status` and `mise doctor`, then open a fresh shell.
+
+## Existing machine
 
 ```sh
 git pull --ff-only
@@ -42,21 +30,25 @@ mise bootstrap plan
 mise bootstrap --locked
 ```
 
-Runtime versions are deliberately pinned, while fast-moving application CLIs may use `latest`. Both are resolved to exact versions in the committed lockfiles for the supported `macos-arm64` laptop and `linux-x64` Bifrost targets. When changing or updating one, run `mise lock --bump` from the canonical checkout, review the matching lockfile, and bootstrap both machines before pushing.
+## Bump tool versions
 
-Starship provides the shared interactive prompt directly in macOS Zsh and Linux Bash. It is mise-managed and initialized by each shell's native startup file; no Oh My Zsh or shell plugin manager is involved. The shared prompt configuration lives at `dotfiles/common/starship.toml`.
+```sh
+mise lock --bump
+```
 
-## Ownership boundaries
+Review the lockfile changes, bootstrap both machines, then push.
 
-This repository contains only generic, non-secret machine configuration. It does not own:
+## How it works
 
-- credentials or private keys;
-- live Codex, Claude Code, Cursor, T3 Code, or PostHog Desktop state;
-- personal cross-harness Agent Skills and MCP declarations;
-- project-specific instructions or runtime configuration.
+- `mise.toml` holds shared tools and dotfile symlinks. `mise.macos.toml` and `mise.linux.toml` are selected automatically per platform; the macOS profile also declares Homebrew formulae and casks.
+- Lockfiles pin exact versions for the two supported targets: `macos-arm64` (laptop) and `linux-x64` (Bifrost).
+- `dotfiles/` contains the actual configs: `common/` (gitconfig, starship), `macos/` (zsh), `linux/` (bash).
+- The prompt is Starship, initialized from each shell's native startup file.
+- Mise shims go on `PATH` before interactive-shell setup, so SSH commands and background tools resolve the same pinned runtimes.
+- Apps deliberately managed outside bootstrap are listed in [`docs/macos-app-inventory.md`](docs/macos-app-inventory.md).
 
-Personal agent configuration belongs in the private `carljohan/agent-kit` repository. Project setup belongs in each project repository.
+## Not in this repo
 
-## GPG signing on macOS
-
-Git signing expects `gpg` and `pinentry-mac`, which the macOS bootstrap declares. The signing key itself and its passphrase are provisioned outside Git.
+- Credentials and private keys. The macOS bootstrap installs `gpg` and `pinentry-mac`, but the Git signing key and passphrase are provisioned by hand.
+- Agent state and personal Agent Skills/MCP config — those live in the private `carljohan/agent-kit` repository.
+- Project-specific setup — that belongs in each project's own repo.

@@ -1,0 +1,44 @@
+"$schema" = "https://starship.rs/config-schema.json"
+
+# Compact, useful context that renders reliably in desktop and remote terminals.
+add_newline = false
+
+[directory]
+style = "bold cyan"
+truncation_length = 3
+truncate_to_repo = true
+
+[git_branch]
+symbol = "git:"
+style = "bold purple"
+
+[git_status]
+style = "bold yellow"
+
+[cmd_duration]
+min_time = 2000
+format = "took [$duration]($style) "
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+
+# Keep cloud/package context out of the everyday prompt; language runtimes and
+# Git state still appear automatically when relevant.
+[aws]
+disabled = true
+
+[azure]
+disabled = true
+
+[docker_context]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[mise]
+disabled = true
+
+[package]
+disabled = true

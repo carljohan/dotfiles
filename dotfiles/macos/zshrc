@@ -32,9 +32,12 @@ if [[ -r "$HOME/google-cloud-sdk/completion.zsh.inc" ]]; then
   source "$HOME/google-cloud-sdk/completion.zsh.inc"
 fi
 
-# Keep mise last so project runtime selections take precedence.
+# Activate the pinned toolchain before initializing the prompt from it.
 if [[ -x "$HOME/.local/bin/mise" ]]; then
   eval "$("$HOME/.local/bin/mise" activate zsh)"
+fi
+if command -v starship >/dev/null 2>&1; then
+  eval "$(starship init zsh)"
 fi
 
 typeset -U path PATH

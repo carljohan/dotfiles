@@ -39,6 +39,8 @@ mise bootstrap --locked
 
 Tool versions are deliberately pinned and locked for the supported `macos-arm64` laptop and `linux-x64` Bifrost targets. When changing one, update the relevant `mise*.toml`, run `mise lock --global`, review the matching committed lockfile, and bootstrap both machines before pushing.
 
+Starship provides the shared interactive prompt directly in macOS Zsh and Linux Bash. It is mise-managed and initialized by each shell's native startup file; no Oh My Zsh or shell plugin manager is involved. The shared prompt configuration lives at `dotfiles/common/starship.toml`.
+
 ## Ownership boundaries
 
 This repository contains only generic, non-secret machine configuration. It does not own:

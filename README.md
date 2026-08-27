@@ -10,6 +10,8 @@ Public, secret-free shell, Git, and machine bootstrap declarations for Carl Joha
 
 Mise is the single bootstrap entrypoint. `mise.toml` contains common declarations, while `mise.macos.toml` and `mise.linux.toml` are selected automatically by the current platform.
 
+The macOS profile also declares the Homebrew formulae and casks expected on a personal development laptop. Developer and personal workstation applications are grouped separately in that file, but use the same bootstrap path; neither group applies to Linux servers or cloud environments.
+
 The committed `.miserc.toml` enables platform selection during the first bootstrap. Shell startup exports the same early mise setting before the global platform config is discovered.
 Mise shims are placed on `PATH` before interactive-shell setup so SSH commands, agents, and background tools resolve the same pinned runtimes.
 

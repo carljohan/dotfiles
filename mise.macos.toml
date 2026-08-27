@@ -1,12 +1,40 @@
 [bootstrap.packages]
+"brew:actionlint" = "latest"
+
+# Current laptop networking dependencies. Service configuration and secrets
+# remain machine-owned rather than being copied into this repository.
+"brew:cloudflared" = "latest"
+"brew:dnsmasq" = "latest"
+
+"brew:ffmpeg" = "latest"
 "brew:gh" = "latest"
 "brew:git" = "latest"
 "brew:git-delta" = "latest"
+"brew:git-filter-repo" = "latest"
 "brew:gnupg" = "latest"
+"brew:imagemagick" = "latest"
 "brew:jq" = "latest"
+"brew:pandoc" = "latest"
 "brew:pinentry-mac" = "latest"
+"brew:poppler" = "latest"
 "brew:ripgrep" = "latest"
 "brew:shellcheck" = "latest"
+"brew:yt-dlp" = "latest"
+
+# Development applications used on every macOS workstation.
+"brew-cask:1password-cli" = "latest"
+"brew-cask:codex" = "latest"
+"brew-cask:firefox" = "latest"
+"brew-cask:ghostty" = "latest"
+"brew-cask:google-chrome" = "latest"
+"brew-cask:orbstack" = "latest"
+
+# Personal workstation applications. These remain macOS-only and never apply
+# to Linux servers or cloud development environments.
+"brew-cask:hiddenbar" = "latest"
+"brew-cask:notion-calendar" = "latest"
+"brew-cask:raycast" = "latest"
+"brew-cask:vlc" = "latest"
 
 [dotfiles]
 "~/.config/git/platform" = { source = "dotfiles/macos/git-platform", mode = "symlink" }

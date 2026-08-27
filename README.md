@@ -12,6 +12,9 @@ Mise is the single bootstrap entrypoint. `mise.toml` contains common declaration
 
 The macOS profile also declares the Homebrew formulae and casks expected on a personal development laptop. Developer and personal workstation applications are grouped separately in that file, but use the same bootstrap path; neither group applies to Linux servers or cloud environments.
 
+Applications intentionally managed outside bootstrap are recorded in
+[`docs/macos-app-inventory.md`](docs/macos-app-inventory.md).
+
 The committed `.miserc.toml` enables platform selection during the first bootstrap. Shell startup exports the same early mise setting before the global platform config is discovered.
 Mise shims are placed on `PATH` before interactive-shell setup so SSH commands, agents, and background tools resolve the same pinned runtimes.
 
@@ -39,7 +42,7 @@ mise bootstrap plan
 mise bootstrap --locked
 ```
 
-Tool versions are deliberately pinned and locked for the supported `macos-arm64` laptop and `linux-x64` Bifrost targets. When changing one, update the relevant `mise*.toml`, run `mise lock --global`, review the matching committed lockfile, and bootstrap both machines before pushing.
+Runtime versions are deliberately pinned, while fast-moving application CLIs may use `latest`. Both are resolved to exact versions in the committed lockfiles for the supported `macos-arm64` laptop and `linux-x64` Bifrost targets. When changing or updating one, run `mise lock --bump` from the canonical checkout, review the matching lockfile, and bootstrap both machines before pushing.
 
 Starship provides the shared interactive prompt directly in macOS Zsh and Linux Bash. It is mise-managed and initialized by each shell's native startup file; no Oh My Zsh or shell plugin manager is involved. The shared prompt configuration lives at `dotfiles/common/starship.toml`.
 

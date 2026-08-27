@@ -10,10 +10,10 @@
 "brew:gh" = "latest"
 "brew:git" = "latest"
 "brew:git-delta" = "latest"
-"brew:git-filter-repo" = "latest"
 "brew:gnupg" = "latest"
 "brew:imagemagick" = "latest"
 "brew:jq" = "latest"
+"brew:mas" = "latest"
 "brew:pandoc" = "latest"
 "brew:pinentry-mac" = "latest"
 "brew:poppler" = "latest"
@@ -23,18 +23,38 @@
 
 # Development applications used on every macOS workstation.
 "brew-cask:1password-cli" = "latest"
-"brew-cask:codex" = "latest"
 "brew-cask:firefox" = "latest"
+"brew-cask:gcloud-cli" = "latest"
 "brew-cask:ghostty" = "latest"
 "brew-cask:google-chrome" = "latest"
 "brew-cask:orbstack" = "latest"
 
 # Personal workstation applications. These remain macOS-only and never apply
 # to Linux servers or cloud development environments.
+"brew-cask:1password" = "latest"
+"brew-cask:betterdisplay" = "latest"
+"brew-cask:chatgpt" = "latest"
+"brew-cask:claude" = "latest"
+"brew-cask:cleanshot" = "latest"
+"brew-cask:cursor" = "latest"
+"brew-cask:discord" = "latest"
+"brew-cask:figma" = "latest"
 "brew-cask:hiddenbar" = "latest"
+"brew-cask:linear" = "latest"
+"brew-cask:mullvad-vpn" = "latest"
+"brew-cask:notion" = "latest"
 "brew-cask:notion-calendar" = "latest"
 "brew-cask:raycast" = "latest"
+"brew-cask:slack" = "latest"
+"brew-cask:spotify" = "latest"
+"brew-cask:tailscale-app" = "latest"
+"brew-cask:tuple" = "latest"
 "brew-cask:vlc" = "latest"
+"brew-cask:wispr-flow" = "latest"
+
+# Things 3 is distributed through the Mac App Store; Homebrew only carries
+# unrelated apps and a sandbox helper, not the application itself.
+"mas:904280696" = "latest"
 
 [dotfiles]
 "~/.config/git/platform" = { source = "dotfiles/macos/git-platform", mode = "symlink" }

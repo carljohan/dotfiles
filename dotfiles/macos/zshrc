@@ -8,9 +8,9 @@ setopt append_history share_history hist_ignore_all_dups hist_save_no_dups
 
 # Small, portable defaults.
 alias ll='ls -la'
-alias c='code .'
+alias c='cursor .'
 alias reload='exec zsh -l'
-alias zconf='code "$HOME/code/github.com/carljohan/dotfiles"'
+alias zconf='cursor "$HOME/code/github.com/carljohan/dotfiles"'
 
 yt-dlmp4() {
   yt-dlp --merge-output-format mp4 --postprocessor-args "ffmpeg:-preset veryfast" "$@"
@@ -23,15 +23,6 @@ if [[ -t 1 ]]; then
   export GPG_TTY="$(tty)"
 fi
 
-# Active application-owned CLI integrations that are not runtime managers.
-[[ -r "$HOME/.vite-plus/env" ]] && source "$HOME/.vite-plus/env"
-if [[ -r "$HOME/google-cloud-sdk/path.zsh.inc" ]]; then
-  source "$HOME/google-cloud-sdk/path.zsh.inc"
-fi
-if [[ -r "$HOME/google-cloud-sdk/completion.zsh.inc" ]]; then
-  source "$HOME/google-cloud-sdk/completion.zsh.inc"
-fi
-
 # Activate the pinned toolchain before initializing the prompt from it.
 if [[ -x "$HOME/.local/bin/mise" ]]; then
   eval "$("$HOME/.local/bin/mise" activate zsh)"
@@ -41,3 +32,4 @@ if command -v starship >/dev/null 2>&1; then
 fi
 
 typeset -U path PATH
+path=("$HOME/.local/share/mise/shims" $path)

@@ -12,7 +12,6 @@ channel.
 - Microsoft Excel
 - Numbers
 - Pages
-- Xcode
 
 Things is also distributed through the App Store, but is declared in
 `mise.macos.toml` by its App Store ID. Hidden Bar is currently an App Store

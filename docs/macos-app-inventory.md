@@ -22,6 +22,8 @@ installation and is declared as a Homebrew cask for future bootstrap.
 - Arc
 - calibre
 - Circleback
+- Claude Code CLI (`~/.local/bin/claude`, native `latest` channel)
+- Codex CLI (global npm package under the pinned mise-managed Node)
 - Copilot Money
 - GeForce NOW
 - Grok Bot

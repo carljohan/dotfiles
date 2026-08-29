@@ -6,14 +6,60 @@ lockfile_platforms = ["macos-arm64", "linux-x64"]
 not_found_auto_install = false
 
 [tools]
-"npm:@anthropic-ai/claude-code" = { version = "latest", allow_builds = ["@anthropic-ai/claude-code"] }
-"npm:@openai/codex" = "latest"
 node = "24.13.1"
 pnpm = "11.11.0"
 python = "3.14.3"
 starship = "1.26.0"
 trufflehog = "3.97.1"
 uv = "0.10.9"
+
+# Bootstrap provider launchers once; their supported updater owns later updates.
+[tasks.bootstrap]
+description = "Install vendor-managed tools needed on every host"
+run = '''
+set -eu
+
+claude="$HOME/.local/bin/claude"
+if [ ! -x "$claude" ]; then
+  curl -fsSL https://claude.ai/install.sh | bash -s latest
+fi
+"$claude" --version
+
+codex="$(npm prefix -g)/bin/codex"
+if [ ! -x "$codex" ]; then
+  npm install -g --allow-scripts=@openai/codex @openai/codex@latest
+fi
+"$codex" --version
+'''
+
+[tasks."claude:status"]
+description = "Verify that native Claude Code owns the current host"
+run = '''
+set -eu
+expected="$HOME/.local/bin/claude"
+resolved="$(command -v claude)"
+printf 'Claude path: %s\n' "$resolved"
+claude --version
+if [ "$resolved" != "$expected" ]; then
+  printf 'Expected native launcher: %s\n' "$expected" >&2
+  exit 1
+fi
+'''
+
+[tasks."codex:status"]
+description = "Verify that the pinned Node's global npm install owns Codex"
+run = '''
+set -eu
+expected="$(npm prefix -g)/bin/codex"
+selected="$(mise which codex)"
+printf 'Codex selected path: %s\n' "$selected"
+printf 'Codex npm path: %s\n' "$expected"
+"$selected" --version
+if [ "$(realpath "$selected")" != "$(realpath "$expected")" ]; then
+  printf 'Expected the pinned Node global npm install to own Codex\n' >&2
+  exit 1
+fi
+'''
 
 [dotfiles]
 "~/.gitconfig" = { source = "dotfiles/common/gitconfig", mode = "symlink" }

@@ -21,6 +21,17 @@ On a fresh Mac, the `git clone` triggers the Xcode Command Line Tools install â€
 
 Check with `mise bootstrap status` and `mise doctor`, then open a fresh shell.
 
+The bootstrap task installs Claude Code through Anthropic's native `latest`
+channel and Codex into the pinned Node's global npm prefix when they are
+missing. Claude owns its native updates; T3 Code can update the npm-owned Codex
+install directly without creating a second copy. Verify the selected owners
+with:
+
+```sh
+mise run claude:status
+mise run codex:status
+```
+
 ## Existing machine
 
 ```sh
@@ -41,7 +52,9 @@ Review the lockfile changes, bootstrap both machines, then push.
 ## How it works
 
 - `mise.toml` holds shared tools and dotfile symlinks. `mise.macos.toml` and `mise.linux.toml` are selected automatically per platform; the macOS profile also declares Homebrew formulae and casks.
-- Lockfiles pin exact versions for the two supported targets: `macos-arm64` (laptop) and `linux-x64` (Bifrost).
+- Lockfiles pin exact versions of mise-owned tools for the two supported targets: `macos-arm64` (laptop) and `linux-x64` (Bifrost).
+- Claude Code is installed natively on each host on the `latest` channel. Anthropic owns its background updates; the repository records the installation policy but does not pin the binary version.
+- Codex is installed globally under the pinned mise-managed Node. npm owns the package version so T3 Code's npm update action updates the selected binary; rerunning bootstrap recreates it after a Node version change.
 - `dotfiles/` contains the actual configs: `common/` (gitconfig, starship), `macos/` (zsh), `linux/` (bash).
 - The prompt is Starship, initialized from each shell's native startup file.
 - Mise shims go on `PATH` before interactive-shell setup, so SSH commands and background tools resolve the same pinned runtimes.
